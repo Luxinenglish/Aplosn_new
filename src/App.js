@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight, Code, Shield, Users, Globe, Mail, ExternalLink, Linkedin, Twitter, Languages, Sparkles, Trophy, UserPlus, MessageSquare, Award } from 'lucide-react';
+import { Menu, X, ChevronRight, Code, Shield, Users, Globe, Mail, Linkedin, Twitter, Languages, Sparkles, Trophy, UserPlus, MessageSquare, Award } from 'lucide-react';
 
 const translations = {
     fr: {
