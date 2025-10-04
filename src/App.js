@@ -4,7 +4,7 @@ import { Menu, X, ChevronRight, Code, Shield, Users, Globe, Mail, ExternalLink, 
 const translations = {
     fr: {
         nav: { home: "Accueil", members: "Membres", ctf: "CTF", joinUs: "Nous Rejoindre", contact: "Contact" },
-        hero: { title1: "Association pour la Promotion du", title2: "Libre et de l'Open Source", subtitle: "Pour une Souveraineté Numérique en France", cta1: "Découvrir notre mission", cta2: "Nous rejoindre" },
+        hero: { title1: "Association pour la Promotion du", title2: "Libre et de l'Open Source", subtitle: "Pour une Souveraineté Numérique en France", cta1: "Découvrir notre mission", cta2: "Nous rejoindre", motto: "Notre devise : « L’humanité de demain sera libre et open source, nous devons donc commencer ce soir. »"},
         mission: {
             title: "Notre Mission",
             subtitle: "L'APLOSN œuvre pour la promotion du logiciel libre, de l'open source et de la souveraineté numérique en France",
@@ -71,7 +71,7 @@ const translations = {
     },
     en: {
         nav: { home: "Home", members: "Members", ctf: "CTF", joinUs: "Join Us", contact: "Contact" },
-        hero: { title1: "Association for the Promotion of", title2: "Free and Open Source Software", subtitle: "For Digital Sovereignty in France", cta1: "Discover our mission", cta2: "Join us" },
+        hero: { title1: "Association for the Promotion of", title2: "Free and Open Source Software", subtitle: "For Digital Sovereignty in France", cta1: "Discover our mission", cta2: "Join us", motto: "Our motto: « The humanity of tomorrow will be free and open source, so we must start tonight. »"},
         mission: {
             title: "Our Mission",
             subtitle: "APLOSN works to promote free software, open source and digital sovereignty in France",
@@ -257,7 +257,7 @@ export default function APLOSNWebsite() {
                             <div className="mb-6 inline-block">
                                 <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-cyan-400/30 rounded-full">
                                     <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
-                                    <span className="text-sm text-cyan-400 font-medium">Open Source & Digital Sovereignty</span>
+                                    <span className="text-sm text-cyan-400 font-medium">{t.hero.motto}</span>
                                 </div>
                             </div>
                             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
