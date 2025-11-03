@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight, Code, Shield, Users, Globe, Mail, Linkedin, Twitter, Languages, Sparkles, Trophy, UserPlus, MessageSquare, Award } from 'lucide-react';
+import { useConsoleTroll } from './useConsoleTroll';
 
 const translations = {
     fr: {
@@ -153,7 +154,7 @@ export default function APLOSNWebsite() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
     const [formSubmitted, setFormSubmitted] = useState(false);
-
+useConsoleTroll();
     const t = translations[language];
 
     useEffect(() => {
@@ -178,13 +179,26 @@ export default function APLOSNWebsite() {
     const heroOpacity = Math.max(0, 1 - scrollY / 500);
     const heroScale = Math.max(0.95, 1 - scrollY / 2000);
 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
+        try {
+            const response = await fetch('http://localhost:2025/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
         setFormSubmitted(true);
         setTimeout(() => {
             setFormSubmitted(false);
             setFormData({ name: '', email: '', subject: '', message: '' });
         }, 3000);
+            }
+        } catch (error) {
+            console.error('Erreur:', error);
+            alert('Erreur lors de l\'envoi du message');
+        }
     };
 
     const handleInputChange = (e) => {
